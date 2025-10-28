@@ -1,4 +1,7 @@
 # Breast-Cancer-Prediction
+
+<img width="274" height="211" alt="image" src="https://github.com/user-attachments/assets/f5774bd6-bf96-4619-9869-535ea452e863" />
+
 ### Introduction
 Breast cancer remains one of the most prevalent malignancies affecting women globally and is a leading cause of cancer-related mortality (World Health Organization, 2023). Early detection significantly improves prognosis and survival outcomes. Conventional diagnostic modalities such as mammography, ultrasound, and biopsy while effective, often depend on expert interpretation, are time-intensive, and may be subject to human variability and error (Ghasemi et al., 2024). The advent of machine learning (ML) presents a transformative opportunity: algorithms can process large volumes of clinical, imaging, and histopathologic data, identify latent patterns, and classify tumours as benign or malignant with high accuracy (Islam et al., 2022). Harnessing ML for breast cancer prediction promises to enhance accuracy, expedite diagnosis, and serve as a decision-support tool for clinicians.
 
@@ -60,26 +63,66 @@ Each model was trained on the training set and tuned (where applicable) for hype
   - **Model Evaluation:** 
 Performance metrics computed included accuracy (correct predictions divided by total predictions), precision (true positives divided by predicted positives), recall (true positives divided by actual positives), F1-score (harmonic mean of precision and recall), and confusion matrix (true positives, false positives, true negatives, false negatives). A 5-fold cross-validation procedure was also applied to assess model generalization.
 
-### Feature Importance and Explainability
+  - **Feature Importance and Explainability:**
 To promote interpretability, feature importance analyses were conducted using model-agnostic techniques (e.g., SHAP values or permutation importance). These analyses identified which features—such as radius, texture, concavity, perimeter, and symmetry—had the greatest influence on model predictions, thereby aligning machine-learning outcomes with biologic insight (Rabiei et al., 2022; Ghasemi et al., 2024).
 
+### Project Visualization
+####  i.  Feature Correlation Matrix
+
+<img width="586" height="494" alt="Screenshot 2025-10-27 150821" src="https://github.com/user-attachments/assets/10e3bc3c-ed9a-41a8-93c5-88e4b4efdfa4" />
+
+Correlation matrix of features and how they are related
+
+
+####  ii.  Model Evaluation
+
+<img width="574" height="282" alt="Screenshot 2025-10-27 150925" src="https://github.com/user-attachments/assets/27a79754-7401-4e9f-9518-1ce8fbc59216" />
+
+Preformance metrics of models
+
+####  iii.  Feature Importance
+
+<img width="522" height="306" alt="Screenshot 2025-10-27 150953" src="https://github.com/user-attachments/assets/fa00e747-04b4-4280-8d8e-c24a2e2d0fe2" />
+
+Features ranked by their influence on the model's output 
+
+<img width="441" height="310" alt="Screenshot 2025-10-27 151036" src="https://github.com/user-attachments/assets/79df16c0-823e-4992-8670-82b72b5e5991" />
+
+Shap values of top five features
+
+<img width="449" height="275" alt="Screenshot 2025-10-27 151053" src="https://github.com/user-attachments/assets/7e443668-ffce-4ef3-8a13-741bd0b58692" />
+
+Summary plot of top five features
+
+### Results
+Key findings include:
+
+  - **Correlation matrix:** The correlation analysis revealed strong interrelationships among several predictive variables, particularly those describing tumor size and shape, such as mean radius, mean perimeter, and mean area, which demonstrated high positive correlations. Concavity-related features, including mean concavity and mean concave points, also exhibited strong associations, emphasizing their shared morphological significance in differentiating malignant from benign tumors. In contrast, features such as symmetry and fractal dimension showed weak or negative correlations with other predictors, suggesting their distinct contribution to tumor irregularity.
+
+  - **Model Evaluation:** Comparative analysis of the model revealed that the Support Vector Classifier (SVC) demonstrated the best overall performance in terms of accuracy, precision, recall, and F1-score, indicating its robustness in handling non-linear relationships within the dataset.
+
+  - **Feature Importance:** Feature importance and SHAP value analyses showed that concavity-related parameters, such as mean concavity, mean concave points, and worst concave points, were among the strongest predictors of malignancy. Additionally, mean radius, mean perimeter, and mean area exhibited high positive correlations and were strongly associated with malignant tumor detection.
+
 ### Conclusion
-This study illustrates the feasibility and promise of machine learning in predicting breast cancer cases. Robust preprocessing, algorithmic training, and comprehensive evaluation demonstrated that certain models achieved high accuracy, precision, and sensitivity, while explainability analyses revealed key predictive features consistent with clinical understanding of malignancy. The findings indicate that ML models—particularly those offering interpretability—may serve as valuable adjuncts to clinical diagnostics, enhancing early detection, guiding interventions, and reducing diagnostic burden. Future work should focus on integrating larger, multicenter datasets, incorporating imaging modalities and genomics, and deploying predictive models within clinical workflows for real-time decision support across diverse patient populations.
+This study demonstrates that machine learning techniques, particularly the Support Vector Classifier, can play a vital role in early breast cancer detection by analyzing complex diagnostic features. The SVC model achieved high predictive accuracy and interpretability through feature importance and SHAP analyses, underscoring the significance of concavity and geometrical metrics in tumor classification.
+
+The findings highlight the transformative potential of data-driven approaches in medical diagnostics, offering a pathway toward faster, more accurate, and cost-effective breast cancer screening. Continued research integrating larger datasets, advanced modeling, and clinical validation will be crucial to transitioning these systems from experimental frameworks into reliable, real-world diagnostic tools.
 
 ### References
-Ghasemi, A., Hashtarkhani, S., Schwartz, D. L., & Shaban-Nejad, A. (2024). Explainable artificial intelligence in breast cancer detection and risk prediction: A systematic scoping review. arXiv. https://arxiv.org/abs/2407.12058.
 
-Islam, T., Kundu, A., Khan, N. I., Bonik, C. C., Akter, F., & Jihadul I. (2022). Machine learning approaches to predict breast cancer: Bangladesh perspective. arXiv. https://arxiv.org/abs/2206.14972
+Bray, F., et al. (2024). Global cancer statistics 2022: GLOBOCAN estimates of incidence and mortality worldwide for 36 cancers in 185 countries. CA: A Cancer Journal for Clinicians. (Discussed in global cancer updates).
 
-Rabiei, R., Ayyoubzadeh, S. M., Sohrabei, S., Esmaeili, M., & Atashi, A. (2022). Prediction of breast cancer using machine learning approaches. PMC. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9175124/
+Frontiers in Oncology. (2024). Hussain, S., et al. Breast cancer risk prediction using machine learning: A systematic review of imaging and non-imaging features. Frontiers in Oncology. https://doi.org/10.3389/fonc.2024.1343627
 
-Rahebi, A. (2023). Machine learning-based models for the prediction of breast cancer recurrence. BMC Medical Informatics and Decision Making, 23(1). https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-023-02377-z
+Gurmessa, D. K. (2024). Explainable machine learning for breast cancer diagnosis from mammography and ultrasound: A systematic review. PubMed. 
 
-World Health Organization. (2023). Global cancer statistics. https://www.who.int/news-room/fact-sheets/detail/breast-cancer
+Lundberg, S. M., & Lee, S.-I. (2017). A unified approach to interpreting model predictions. Advances in Neural Information Processing Systems (NeurIPS). 
+NeurIPS Proceedings
 
-Kumar, V., Abbas, A. K., & Aster, J. C. (2020). Robbins and Cotran pathologic basis of disease (10th ed.). Elsevier.
+UCI Machine Learning Repository. (1995). Breast Cancer Wisconsin (Diagnostic) dataset. Retrieved from https://archive.ics.uci.edu/dataset/17/breast%2Bcancer%2Bwisconsin%2Bdiagnostic.archive.ics.uci.edu
 
-Spanhol, F. A., Oliveira, L. S., Petitjean, C., & Heutte, L. (2016). A dataset for breast cancer histopathological image classification. IEEE Transactions on Biomedical Engineering, 63(7), 1455–1462. https://doi.org/10.1109/TBME.2015.2496264
+Wolberg, W. H., Street, W. N., & Mangasarian, O. L. (1994). Machine learning techniques to diagnose breast cancer from fine-needle aspirates. Cancer Letters, 77(2–3), 163–171. 
 
+World Health Organization. (2025). Breast cancer fact sheet — global statistics and trends. Retrieved from https://www.who.int/news-room/fact-sheets/detail/breast-cancer
 
 
