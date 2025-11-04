@@ -3,68 +3,27 @@
 <img width="274" height="211" alt="image" src="https://github.com/user-attachments/assets/f5774bd6-bf96-4619-9869-535ea452e863" />
 
 ### Introduction
-Breast cancer remains one of the most prevalent malignancies affecting women globally and is a leading cause of cancer-related mortality (World Health Organization, 2023). Early detection significantly improves prognosis and survival outcomes. Conventional diagnostic modalities such as mammography, ultrasound, and biopsy while effective, often depend on expert interpretation, are time-intensive, and may be subject to human variability and error (Ghasemi et al., 2024). The advent of machine learning (ML) presents a transformative opportunity: algorithms can process large volumes of clinical, imaging, and histopathologic data, identify latent patterns, and classify tumours as benign or malignant with high accuracy (Islam et al., 2022). Harnessing ML for breast cancer prediction promises to enhance accuracy, expedite diagnosis, and serve as a decision-support tool for clinicians.
+
+Breast cancer, which mainly affects women, is responsible for a high percentage of cancer-related deaths in developing countries. Early diagnosis and treatment increase the chances of survival, but with conventional diagnostic methods, errors are likely to occur along with other limiting factors, which can reduce survival rates. Incorporating machine learning has provided a platform for improving the early detection and treatment of breast cancer by leveraging insights from clinical and histopathologic datasets to accurately detect benign and malignant tumours in breast cells.
 
 ### Statement of the Problem
-Despite advances in screening and diagnostic technologies, a significant proportion of breast cancers are still detected at advanced stages, particularly in low-resource settings where access to experienced radiologists and advanced imaging is limited. Furthermore, vast quantities of patient and imaging data remain underutilized, as there is often no automated system to convert this data into actionable predictive diagnostics (Rabiei et al., 2022). 
+Most breast cancer cases are detected after they have progressed to an advanced stage, where little can be done in terms of treatment. A large number of cases come from regions where access to experienced personnel and advanced equipment is limited. Also, lack of automated systems has made it difficult to fully utilize the information provided by patient data for the early detection and treatment of breast cancer cases. This has created the need to explore viable and advanced methods, such as the use of machine learning models to accurately predict breast cancer cases
 
 ### Significance of the Study
-This investigation addresses a key healthcare concern by demonstrating how machine learning can be effectively employed to predict breast cancer cases. The significance of this study includes:
-
-  •	Improving diagnostic precision by leveraging feature-rich datasets and ML algorithms (Rahebi et al., 2023).
-
-  •	Assisting clinicians with decision-support tools that offer measurable predictions, thereby reducing reliance on subjective interpretations.
-
-  •	Promoting early detection and intervention, which is vital for successful treatment and improved survival rates.
-
-  •	Reducing healthcare costs through fewer unnecessary biopsies and better risk stratification.
-
-  •	Advancing the knowledge base of AI-driven oncologic diagnostics by identifying the most predictive features and algorithmic approaches.
-
-### Aim and Objectives
-- **Aim**: To develop and evaluate machine learning models capable of accurately predicting breast cancer occurrence based on clinical and histopathological data using interpretable predictive frameworks.
-
-- **Objectives:**
-  
-  - To procure and preprocess a publicly available breast cancer dataset suitable for machine learning analysis (e.g., the Breast Cancer Wisconsin (Diagnostic) dataset).
-  
-  - To implement multiple machine learning algorithms—including logistic regression, decision tree, support vector machine, random forest, and extreme gradient boosting—and   train them on the preprocessed data.
-  
-  - To evaluate each model’s performance using accuracy, precision, recall (sensitivity), F1-score, and confusion matrix, including cross-validation to assess robustness.
-  
-  - To perform feature importance and explainability assessments (e.g., SHAP values and permutation importance) to identify which tumour- and cell-feature variables most significantly influence predictions.
-  
-  - To recommend the best-performing and most interpretable model for potential integration into clinical decision-support workflows.
+The main significance of this study is to enhance the diagnostic precision of breast cancer cases using machine learning models
 
 ### Methodology
   - **Data Collection:**
-This study utilized the Breast Cancer Wisconsin (Diagnostic) dataset from the UCI Machine Learning Repository, which comprises 569 samples with 30 numeric features derived from digitised cell-nucleus images and a target variable labelled as 0 (benign) or 1 (malignant).
+For this study, the Breast Cancer Wisconsin (Diagnostic) dataset which is available on the UCI Machine Learning Repository was used as case study. The dataset had a total of 569 samples with numeric features obtained from digitised cell-nucleus images, with a target variable having labels 0 as benign or 1 as malignant.
 
   - **Data Preprocessing:**
-Data were cleaned, prepared and, exploratory data analysis was performed. Feature scaling was performed via standardization (StandardScaler) to equalize the impact across features. The data were then split into training (80 %) and testing (20 %) sets.
+Data was cleaned, prepared and, exploratory data analysis of the dataset was done. Feature scaling was performed via standardization (StandardScaler) to equalize the impact across features. The data were then split into training (80 %) and testing (20 %) sets.
 
-  - **Model Development:**
-Five machine learning algorithms were implemented:
-
-      - Stochastic Gradient Descent (SGD): linear classifier that separates data through linear decision boundary
+  - **Model Development and Evaluation:**
+Six machine learning models were trained: Stochastic Gradient Descent (SGD), Logistic Regression (LR), Decision Tree (DT), Support Vector Machine (SVM), Random Forest (RF) and Extreme Gradient Boosting (XGBoost). The performance of the models was enhanced using hyperparameter tuning via GridSearch CV and their performances were evaluated. Their performances were evaluated based on their metrics: accuracy, precision, f1-score and recall.
         
-      - Logistic Regression (LR): a baseline binary classification model.
-        
-      - Decision Tree (DT): a tree-based model that partitions feature space by decision rules.
-        
-      - Support Vector Machine (SVM): an algorithm that finds optimal hyperplanes to separate classes.
-        
-      - Random Forest (RF): an ensemble method aggregating multiple decision trees to enhance robustness.
-        
-      - Extreme Gradient Boosting (XGBoost): a gradient-boosted ensemble algorithm optimized for classification accuracy.
-
-Each model was trained on the training set and tuned (where applicable) for hyperparameters, then evaluated on the test set.
-
-  - **Model Evaluation:** 
-Performance metrics computed included accuracy (correct predictions divided by total predictions), precision (true positives divided by predicted positives), recall (true positives divided by actual positives), F1-score (harmonic mean of precision and recall), and confusion matrix (true positives, false positives, true negatives, false negatives). A 5-fold cross-validation procedure was also applied to assess model generalization.
-
   - **Feature Importance and Explainability:**
-To promote interpretability, feature importance analyses were conducted using model-agnostic techniques (e.g., SHAP values or permutation importance). These analyses identified which features—such as radius, texture, concavity, perimeter, and symmetry—had the greatest influence on model predictions, thereby aligning machine-learning outcomes with biologic insight (Rabiei et al., 2022; Ghasemi et al., 2024).
+To promote interpretability, feature importance analyses were conducted using model-agnostic techniques (e.g., SHAP values or permutation importance). These analyses identified which features—such as radius, texture, concavity, perimeter, and symmetry—had the greatest influence on model predictions, thereby aligning machine-learning outcomes with biologic insight (Gurmessa, 2024)
 
 ### Project Visualization
 ####  i.  Feature Correlation Matrix
@@ -104,9 +63,7 @@ Key findings include:
   - **Feature Importance:** Feature importance and SHAP value analyses showed that concavity-related parameters, such as mean concavity, mean concave points, and worst concave points, were among the strongest predictors of malignancy. Additionally, mean radius, mean perimeter, and mean area exhibited high positive correlations and were strongly associated with malignant tumor detection.
 
 ### Conclusion
-This study demonstrates that machine learning techniques, particularly the Support Vector Classifier, can play a vital role in early breast cancer detection by analyzing complex diagnostic features. The SVC model achieved high predictive accuracy and interpretability through feature importance and SHAP analyses, underscoring the significance of concavity and geometrical metrics in tumor classification.
-
-The findings highlight the transformative potential of data-driven approaches in medical diagnostics, offering a pathway toward faster, more accurate, and cost-effective breast cancer screening. Continued research integrating larger datasets, advanced modeling, and clinical validation will be crucial to transitioning these systems from experimental frameworks into reliable, real-world diagnostic tools.
+This study shows that the model Support Vector Classifier had the highest performance after optimization and can help in the early detection of breast cancer cases with the aid of feature importance and SHAP analyses. The findings revealed the potential of data-driven approaches in medical diagnostics, presenting a better, more accurate, and cost-effective way for breast cancer screening. For further work, larger datasets can be incorporated with the use of more advanced models.
 
 ### References
 
