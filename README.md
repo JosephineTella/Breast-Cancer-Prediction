@@ -47,11 +47,11 @@ Features ranked by their influence on the model's output
 
 <img width="441" height="310" alt="Screenshot 2025-10-27 151036" src="https://github.com/user-attachments/assets/79df16c0-823e-4992-8670-82b72b5e5991" />
 
-Shap values of top five features
+Shap values of top ten features
 
 <img width="449" height="275" alt="Screenshot 2025-10-27 151053" src="https://github.com/user-attachments/assets/7e443668-ffce-4ef3-8a13-741bd0b58692" />
 
-Summary plot of top five features
+Summary plot of top ten features
 
 ### Results
 Key findings include:
