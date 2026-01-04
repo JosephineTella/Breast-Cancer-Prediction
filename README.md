@@ -55,30 +55,36 @@ Summary plot of top ten features
 
 #### iv. PCA analysis
 
+
 PCA analysis summary on logistic regression, SVM and KNN models
 
 
 <img width="555" height="206" alt="Screenshot 2026-01-04 002451" src="https://github.com/user-attachments/assets/17d9b924-3a28-4fd7-a554-1e0b4b1fee3c" />
+
 
 ROC Curves of PCA and No-PCA analysis on logistic regression, SVM and KNN models
 
 
 <img width="686" height="441" alt="Screenshot 2026-01-04 003034" src="https://github.com/user-attachments/assets/dac4a4e1-48c9-4be5-a780-025e9d53f0fc" />
 
+
 Cluster visualization (2D PCA)
 
 
 <img width="557" height="468" alt="image" src="https://github.com/user-attachments/assets/ee8168d4-510d-43e9-8c90-9a5991689e34" />
+
 
 PCA Variance Structure and Predictive Importance
 
 
 <img width="658" height="506" alt="Screenshot 2026-01-03 235626" src="https://github.com/user-attachments/assets/130ff739-697f-482c-8386-d26bb886f124" />
 
+
 Comparison of PCA Loadings and SHAP Importance by Principal Component
 
 
 <img width="970" height="469" alt="Screenshot 2026-01-04 001841" src="https://github.com/user-attachments/assets/f5ff5dac-4f83-4d30-ae08-91569b021c95" />
+
 
 Explained Variance against Predictive Contribution (SHAP)
 
