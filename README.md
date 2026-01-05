@@ -68,3 +68,19 @@ Explained Variance against Predictive Contribution (SHAP)
 <img width="970" height="476" alt="Screenshot 2026-01-04 001900" src="https://github.com/user-attachments/assets/2f87e060-a0b0-43a7-b0c1-5286a57bd045" />
 
 
+
+#####  (b) PCA Analysis on KMeans, Hierarchical and DBSCAN algorithms
+
+Cluster visualizations (2D PCA) of KMeans, Hierarchical and DBSCAN algorithms
+
+<img width="1133" height="306" alt="Screenshot 2026-01-05 113229" src="https://github.com/user-attachments/assets/1652e570-7b96-43c7-b7d3-c022df511900" />
+
+PCA variance and Cluster Importance
+
+<img width="376" height="498" alt="Screenshot 2026-01-05 113512" src="https://github.com/user-attachments/assets/5810a319-303a-4543-89e3-64f80f627946" />
+
+
+#####  (c) PCA analysis of linear models
+
+<img width="362" height="365" alt="Screenshot 2026-01-05 114430" src="https://github.com/user-attachments/assets/c91abec0-c47b-465d-84c2-4eaa2217b545" />
+
