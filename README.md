@@ -16,10 +16,14 @@ The correlation matrix and heatmap analysis of the breast cancer dataset reveale
 
 Performance metrics of models
 
+
+
 <img width="574" height="282" alt="Screenshot 2025-10-27 150925" src="https://github.com/user-attachments/assets/27a79754-7401-4e9f-9518-1ce8fbc59216" />
 
 
+
 <img width="829" height="181" alt="Screenshot 2026-02-02 160558" src="https://github.com/user-attachments/assets/12cb815e-a669-4818-bc8a-a2301a1a3e80" />
+
 
 
 
@@ -60,12 +64,15 @@ The SHAP summary plot for the Support Vector Classifier (SVC) highlighted the re
 <img width="555" height="206" alt="Screenshot 2026-01-04 002451" src="https://github.com/user-attachments/assets/17d9b924-3a28-4fd7-a554-1e0b4b1fee3c" />
 
 
+
 This table compared the classification performance of Logistic Regression, Support Vector Machine (SVM), and K-Nearest Neighbors (KNN) models trained with and without Principal Component Analysis (PCA), using accuracy, precision, recall, F1-score, and ROC-AUC as evaluation metrics. Overall, models trained without PCA achieved the strongest performance, with LogReg_NoPCA, SVM_NoPCA, and KNN_NoPCA all reaching very high accuracy (≈97.4%) and excellent discrimination (ROC-AUC ≈0.99), indicating that the original feature space already contains highly informative and well-structured signals. Applying PCA led to a modest reduction in performance for Logistic Regression and SVM, as seen in lower accuracy, recall, and F1-scores, suggesting some loss of class-discriminative information during dimensionality reduction. In contrast, KNN showed identical accuracy, recall, and F1-score with and without PCA, indicating that KNN was relatively robust to feature compression, although a slight decrease in ROC-AUC was observed. The results implied that while PCA can reduce dimensionality and model complexity, it is not strictly beneficial in this case, particularly for linear and margin-based models, as the full feature set provides superior predictive power.
 
 
 (ii) ROC Curves of PCA and No-PCA analysis on logistic regression, SVM and KNN models
 
 <img width="686" height="441" alt="Screenshot 2026-01-04 003034" src="https://github.com/user-attachments/assets/dac4a4e1-48c9-4be5-a780-025e9d53f0fc" />
+
+
 
 All six models achieved AUC scores above 0.99, indicating exceptional discriminative ability. The curves cluster tightly in the top-left corner, showing that all models can achieve very high true positive rates with minimal false positives. Across all three algorithms, applying PCA dimensionality reduction results in only marginal performance degradation (0.001-0.002 AUC drop). This suggests that the principal components successfully capture most of the variance needed for accurate classification. Across all three algorithms, applying PCA dimensionality reduction resulted in only marginal performance degradation (0.001-0.002 AUC drop). This suggests that the principal components successfully captured most of the variance needed for accurate classification. The fact that all three very different algorithms (linear, kernel-based, and distance-based) achieved nearly identical performance suggests the dataset has strong, consistent patterns that multiple approaches can capture effectively.
 
