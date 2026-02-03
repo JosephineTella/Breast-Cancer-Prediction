@@ -94,6 +94,8 @@ The 2D PCA (Principal Component Analysis) visualization compared predicted class
 
 The table presents the PCA loading matrix for the first ten principal components (PC1–PC10), showing how each original feature contributed to the transformed components. PC1 is primarily driven by size-related features—mean radius, mean perimeter, and mean area—with similar positive loadings, indicating that it captures overall tumour size variation. PC2 also reflected size information but with opposite signs, suggesting it contrasts size-related measures with other characteristics, such as smoothness. PC4 is dominated by mean texture (loading ≈ 0.60), identifying texture variation as the main source of information in this component, largely independent of size. Mean smoothness contributed more strongly to PC5, PC6, and PC8 with relatively large negative loadings, indicating that these components captured surface regularity and boundary-related variations rather than tumour size. Overall, the table showed that PCA effectively separated correlated size features into a dominant size component (PC1), while texture and smoothness are distributed across subsequent components, confirming that the original variables contribute to distinct and interpretable latent dimensions in the data.
 
+
+
 #####  PCA feature loadings heatmap
 
 <img width="770" height="475" alt="Screenshot 2026-02-02 210116" src="https://github.com/user-attachments/assets/671769a0-802d-4d58-8417-86abbe10a816" />
@@ -101,13 +103,17 @@ The table presents the PCA loading matrix for the first ten principal components
 
 The PCA feature loadings heatmap showed how the original 30 features (cell nucleus measurements) contributed to the first five principal components (PC1-PC5). The color intensity and direction indicated the strength and sign of each feature's contribution to each component.
 
+
+
 ##### PCA Variance Structure and Predictive Importance
 
 
 <img width="658" height="506" alt="Screenshot 2026-01-03 235626" src="https://github.com/user-attachments/assets/130ff739-697f-482c-8386-d26bb886f124" />
 
 
+
 The scatter plot evaluated the relationship between PCA variance structure and predictive importance by comparing each principal component's mean absolute loading (x-axis) against its mean SHAP value (y-axis), which measured its contribution to model predictions.
+
 
 
 
@@ -116,7 +122,11 @@ The scatter plot evaluated the relationship between PCA variance structure and p
 
 <img width="970" height="469" alt="Screenshot 2026-01-04 001841" src="https://github.com/user-attachments/assets/f5ff5dac-4f83-4d30-ae08-91569b021c95" />
 
+
+
 The bar chart directly compared PCA loading strength (blue bars) versus SHAP importance (orange bars) for each principal component, making it easy to see which components contributed to model predictions versus which just captured variance.
+
+
 
 
 ##### Explained Variance against Predictive Contribution (SHAP)
@@ -124,7 +134,11 @@ The bar chart directly compared PCA loading strength (blue bars) versus SHAP imp
 
 <img width="970" height="476" alt="Screenshot 2026-01-04 001900" src="https://github.com/user-attachments/assets/2f87e060-a0b0-43a7-b0c1-5286a57bd045" />
 
+
+
 The bar chart compares explained variance (blue bars - how much data variation each component captures) versus SHAP importance (orange bars - how much each component contributes to predictions) across the first 17 principal components.
+
+
 
 #####  (b) PCA Analysis on KMeans, Hierarchical and DBSCAN algorithms
 
@@ -135,6 +149,10 @@ Cluster visualizations (2D PCA) of KMeans, Hierarchical and DBSCAN algorithms
 PCA variance and Cluster Importance
 
 <img width="376" height="498" alt="Screenshot 2026-01-05 113512" src="https://github.com/user-attachments/assets/5810a319-303a-4543-89e3-64f80f627946" />
+
+
+These scatter plots compared PCA variance structure against cluster importance for K-Means (top) and Hierarchical (bottom) clustering, revealing nearly identical patterns that validate the robustness of the three-cluster solution. 
+
 
 
 #####  (c) PCA analysis of linear models
