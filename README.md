@@ -3,28 +3,36 @@
 
 ####  i.  Feature Correlation Matrix
 
+
 <img width="586" height="494" alt="Screenshot 2025-10-27 150821" src="https://github.com/user-attachments/assets/10e3bc3c-ed9a-41a8-93c5-88e4b4efdfa4" />
+
 
 Correlation matrix of features and how they are related
 
 The correlation matrix and heatmap analysis of the breast cancer dataset revealed clear patterns of association among quantitative features, with coefficients ranging from −1.00 to +1.00 and distinct clusters of strong, moderate, and weak relationships. Strong positive correlations were observed among size-related variables such as mean radius, mean perimeter, mean area, and concavity, as well as among worst radius, worst perimeter, and worst area, indicating substantial feature redundancy. Moderate correlations appear among texture-related features, while symmetry and fractal dimension exhibit weak associations. Several size- and concavity-related features showed strong positive correlations with malignancy, whereas smoothness and symmetry were negatively correlated with the target class. Overall, the heatmap underscores considerable multicollinearity, highlighting the importance of feature selection or dimensionality reduction in downstream modeling.
 
+
 ####  ii.  Model Evaluation
+
+Performance metrics of models
 
 <img width="574" height="282" alt="Screenshot 2025-10-27 150925" src="https://github.com/user-attachments/assets/27a79754-7401-4e9f-9518-1ce8fbc59216" />
 
 
 <img width="829" height="181" alt="Screenshot 2026-02-02 160558" src="https://github.com/user-attachments/assets/12cb815e-a669-4818-bc8a-a2301a1a3e80" />
 
-Performance metrics of models
+
 
 The plot and table compared baseline and optimized (“best”) versions of six classification models and showed that performance improved substantially after model tuning across all metrics. Among the baseline models, XGBoost achieved the strongest overall performance (Accuracy = 96.48%, F1 = 97.24%), closely followed by Random Forest, indicating superior balance between precision and recall. Logistic Regression also performed well, with high recall (96.50%) and strong F1-score (95.33%), while Decision Tree and SVC showed comparatively lower balance, and the SGD model lagged behind with the lowest accuracy. After optimization, all models exhibited marked gains, particularly SGD and SVC, which improved dramatically to above 97% accuracy and F1-scores exceeding 98%, highlighting the impact of hyperparameter tuning. The best-performing models overall were best_svc_model and best_lr_model, which achieved the highest recall (99.66% and 98.95%, respectively) and F1-scores (98.46% and 98.27%), making them especially suitable for applications where minimizing false negatives is critical. Overall, the results demonstrate that while ensemble and boosting methods are strong performers by default, careful optimization allows even simpler or margin-based models to achieve state-of-the-art classification performance.
+
 
 ####  iii.  Feature Importance
 
 <img width="522" height="306" alt="Screenshot 2025-10-27 150953" src="https://github.com/user-attachments/assets/fa00e747-04b4-4280-8d8e-c24a2e2d0fe2" />
 
+
 Features ranked by their influence on the model's output 
+
 
 The permutation importance chart for the Support Vector Classifier (SVC) model revealed that the top predictive features for classification are primarily measurements of cellular irregularity and variability, with radius_error and mean_concave_points being the most important (importance scores ≈0.055 and 0.054 respectively). Notably, six of the top ten features are either "error" metrics (measuring variability/standard error) or "worst" metrics (capturing extreme values). The features span geometric characteristics including radius, perimeter, area, concavity, and smoothness, all of which relate to the shape and boundary properties of cell nuclei.
 
