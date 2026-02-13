@@ -180,3 +180,9 @@ These scatter plots compared PCA variance structure against cluster importance f
 
 <img width="362" height="365" alt="Screenshot 2026-01-05 114430" src="https://github.com/user-attachments/assets/c91abec0-c47b-465d-84c2-4eaa2217b545" />
 
+### Conclusion
+
+The breast cancer dataset exhibits strong structural organization driven primarily by tumour size and shape irregularity. Classification performance is exceptionally high across multiple algorithms, particularly after optimization, with SVC and Logistic Regression achieving near-perfect discrimination suitable for clinical decision support.
+Feature importance and SHAP analyses confirm that malignancy prediction is primarily driven by concavity, radius, and variability measures—clinically meaningful markers of tumour aggressiveness.
+While PCA effectively captures variance and preserves class structure, it does not enhance predictive performance and systematically reduces regression accuracy. Regularization methods sufficiently manage multicollinearity without sacrificing discriminative information.
+Overall, the findings demonstrate robust, interpretable, and clinically aligned predictive modeling, with optimization and careful feature handling being more beneficial than dimensionality reduction in this dataset.
