@@ -1,3 +1,24 @@
+### Introduction
+Breast cancer, which mainly affects women, is responsible for a high percentage of cancer-related deaths in developing countries. Early diagnosis and treatment increase the chances of survival, but with conventional diagnostic methods, errors are likely to occur along with other limiting factors, which can reduce survival rates. Incorporating machine learning has provided a platform for improving the early detection and treatment of breast cancer by leveraging insights from clinical and histopathologic datasets to accurately detect benign and malignant tumours in breast cells.
+
+<img width="268" height="188" alt="image" src="https://github.com/user-attachments/assets/89260ef7-77d7-4921-99f5-6d2a85b60639" />
+
+### Statement of the Problem
+Most breast cancer cases are detected after they have progressed to an advanced stage, where little can be done in terms of treatment. A large number of cases come from regions where access to experienced personnel and advanced equipment is limited. Also, lack of automated systems has made it difficult to fully utilize the information provided by patient data for the early detection and treatment of breast cancer cases. This has created the need to explore viable and advanced methods, such as the use of machine learning models to accurately predict breast cancer cases
+
+### Significance of the Study
+The main significance of this study is to enhance the diagnostic precision of breast cancer cases using machine learning models
+
+### Methodology
+
+•	Data Collection: For this study, the Breast Cancer Wisconsin (Diagnostic) dataset which is available on the UCI Machine Learning Repository was used as case study. The dataset had a total of 569 samples with numeric features obtained from digitised cell-nucleus images, with a target variable having labels 0 as benign or 1 as malignant.
+
+•	Data Preprocessing: Data was cleaned, prepared and, exploratory data analysis of the dataset was done. Feature scaling was performed via standardization (StandardScaler) to equalize the impact across features. The data were then split into training (80 %) and testing (20 %) sets.
+
+•	Model Development and Evaluation: Six machine learning models were trained: Stochastic Gradient Descent (SGD), Logistic Regression (LR), Decision Tree (DT), Support Vector Machine (SVM), Random Forest (RF) and Extreme Gradient Boosting (XGBoost). The performance of the models was enhanced using hyperparameter tuning via GridSearch CV and their performances were evaluated. Their performances were evaluated based on their metrics: accuracy, precision, f1-score and recall.
+
+•	Feature Importance and Explainability: To promote interpretability, feature importance analyses were conducted using model-agnostic techniques (e.g., SHAP values or permutation importance). These analyses identified which features—such as radius, texture, concavity, perimeter, and symmetry—had the greatest influence on model predictions, thereby aligning machine-learning outcomes with biologic insight 
+
 
 ### Project Visualizations
 
@@ -75,7 +96,7 @@ This table compared the classification performance of Logistic Regression, Suppo
 
 
 
-All six models achieved AUC scores above 0.99, indicating exceptional discriminative ability. The curves cluster tightly in the top-left corner, showing that all models can achieve very high true positive rates with minimal false positives. Across all three algorithms, applying PCA dimensionality reduction results in only marginal performance degradation (0.001-0.002 AUC drop). This suggests that the principal components successfully capture most of the variance needed for accurate classification. Across all three algorithms, applying PCA dimensionality reduction resulted in only marginal performance degradation (0.001-0.002 AUC drop). This suggests that the principal components successfully captured most of the variance needed for accurate classification. The fact that all three very different algorithms (linear, kernel-based, and distance-based) achieved nearly identical performance suggests the dataset has strong, consistent patterns that multiple approaches can capture effectively.
+All six models achieved AUC scores above 0.99, indicating exceptional discriminative ability. The curves cluster tightly in the top-left corner, showing that all models can achieve very high true positive rates with minimal false positives. Across all three algorithms, applying PCA dimensionality reduction results in only marginal performance degradation (0.001-0.002 AUC drop). This suggests that the principal components successfully capture most of the variance needed for accurate classification. The fact that all three very different algorithms (linear, kernel-based, and distance-based) achieved nearly identical performance suggests the dataset has strong, consistent patterns that multiple approaches can capture effectively.
 
 
 ##### Cluster visualization (2D PCA)
